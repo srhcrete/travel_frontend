@@ -1,4 +1,3 @@
-
 import {Component, OnInit, Input, EventEmitter} from '@angular/core';
 import {MaterializeAction} from "angular2-materialize";
 

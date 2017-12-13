@@ -5,7 +5,7 @@
 
     <div class="nav-wrapper blue ">
       <a [routerLink]="['']" id="logo-container" class="brand-logo">Rails & Angular Auth</a>
-
+      
       <ul>
 
         <li *ngIf="!tokenAuthService.userSignedIn()">
@@ -16,7 +16,7 @@
         </li>
 
         <li *ngIf="tokenAuthService.userSignedIn()">
-          <a>PROFILE</a>
+          <a >PROFILE</a>
         </li>
         <li *ngIf="tokenAuthService.userSignedIn()">
           <a (click)="tokenAuthService.signOut()">LOGOUT</a>
