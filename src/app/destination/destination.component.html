@@ -2,6 +2,6 @@
   destination works!
 </p>
 
-<ul>
-  <li *ngFor="let destination of destinations">{{ destination.city }}</li>
+<ul *ngFor="let place of destination">
+  <li>{{place.city}}, {{place.country}}</li>
 </ul>

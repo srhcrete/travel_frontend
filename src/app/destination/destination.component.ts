@@ -11,7 +11,9 @@ import { Http } from "@angular/http";
   styleUrls: ['./destination.component.sass']
 })
 export class DestinationComponent implements OnInit {
+  arrays;
   destinations;
+  destination;
 
   constructor(
     public authTokenService:Angular2TokenService,
@@ -20,18 +22,30 @@ export class DestinationComponent implements OnInit {
     private http: Http
   ) {
 
-    http.get('http://localhost:3000/destinations.json')
-      .subscribe(
-        res => this.destinations = res.json()
-      );
 
-   }
+
+
+
 
   // logOut() {
   //   this.authService.logOutUser().subscribe(() => this.router.navigate(['/']));
   // }
 
-  ngOnInit() {
-  }
+
+  http.get('http://localhost:3000/destinations.json')
+  .subscribe(
+    data => {
+      this.arrays = data.json();
+      this.destinations = Array.of(this.arrays);
+      this.destination = (this.destinations[0]);
+    },
+    err => console.error(err),
+    () => console.log(Array.of(this.destination))
+  );
+}
+
+
+
+ngOnInit() {}
 
 }
