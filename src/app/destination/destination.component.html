@@ -1,7 +1,5 @@
-<p>
-  destination works!
-</p>
+<h5>Destinations</h5>
 
 <ul *ngFor="let place of destination">
-  <li>{{place.city}}, {{place.country}}</li>
+  <a href="destination/{{place.id}}"><li>{{place.city}}, {{place.country}}</li></a>
 </ul>

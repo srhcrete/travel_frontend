@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from "./home/home.component";
 import {ProfileComponent} from "./profile/profile.component";
 import {DestinationComponent} from "./destination/destination.component";
+import {DestinationDetailComponent} from "./destination-detail/destination-detail.component";
 import {AuthGuard} from "./guards/auth.guard";
 
 const routes: Routes = [
@@ -23,7 +24,10 @@ const routes: Routes = [
   {
    path: 'destinations',
    component: DestinationComponent,
-   canActivate: [AuthGuard]
+ },
+  {
+   path: 'destination/:id',
+   component: DestinationDetailComponent,
   }
 ];
 
